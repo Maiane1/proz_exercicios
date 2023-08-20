@@ -1,0 +1,39 @@
+--criacao database
+CREATE DATABASE ESCOLA;
+
+--criacao tabela aluno
+CREATE TABLE ESCOLA.ALUNO(
+	Id int PRIMARY KEY,
+	Nome varchar(50) NOT NULL,
+	Matricula varchar(10) NOT NULL,
+	Email varchar(100) NOT NULL,
+	Endereco varchar(150) NOT NULL,
+	Telefone varchar(20) NULL
+)
+
+--criacao tabela emprestimo
+CREATE TABLE ESCOLA.EMPRESTIMO(
+	Codigo int PRIMARY KEY,
+	Data_hora datetime NOT NULL,
+	Aluno_id int NOT NULL,
+	Data_devolucao datetime NULL,
+	CONSTRAINT fk_Aluno FOREIGN KEY (Aluno_id) REFERENCES ALUNO (Id)
+)
+
+--insert registros na tabela aluno
+INSERT INTO ALUNO(Id, Nome, Matricula, Email, Endereco, Telefone) 
+VALUES(1, 'Joao', '1234', 'joao@gmail.com', 'rua teste 123', '11 12345-1234')
+
+INSERT INTO ALUNO(Id, Nome, Matricula, Email, Endereco, Telefone) 
+VALUES(2, 'Jose', '12345', 'jose@gmail.com', 'rua teste 1234', '11 12345-1235')
+
+--insert registro na tabela emprestimo
+INSERT INTO EMPRESTIMO(Codigo, Data_hora, Data_devolucao) 
+VALUES(1, '12/03/2023 11:12', '15/03/2023 12:12')
+
+--select com join entre as tabelas aluno e emprestimo
+SELECT a.*, e.Data_hora, e.Data_devolucao
+FROM ALUNO a 
+INNER JOIN EMPRESTIMO e ON
+	a.Id = e.Aluno_id
+	
