@@ -1,0 +1,17 @@
+CREATE PROCEDURE SP_RelatorioDiario(
+	@DiaRelatorio datetime
+)
+AS
+BEGIN
+
+	DECLARE diaCompra DATE;
+	
+	diaCompra = SELECT CAST(@DiaRelatorio as DATE);
+	
+	SELECT SUM(C.Quantidade) AS TotalComprasDia
+	FROM Compras C
+	JOIN Produtos P ON 
+		C.ProdutoID = P.ID
+	WHERE C.DataCompra = diaCompra;
+
+END;
