@@ -1,0 +1,24 @@
+--criacao database
+CREATE DATABASE ESCOLA;
+GO
+
+--criacao tabela aluno
+CREATE TABLE ESCOLA.ALUNO(
+	Id int PRIMARY KEY,
+	Nome varchar(50) NOT NULL,
+	Matricula varchar(10) NOT NULL,
+	Email varchar(100) NOT NULL,
+	Endereco varchar(150) NOT NULL,
+	Telefone varchar(20) NULL
+)
+GO
+
+--criacao trigger para exibir itens inseridos na tabela aluno
+CREATE TRIGGER tr_aluno_insert
+ON ALUNO
+FOR INSERT
+AS
+SELECT I.Id,
+       I.Nome
+FROM   Inserted I;
+
