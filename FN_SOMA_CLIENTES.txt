@@ -1,0 +1,14 @@
+CREATE FUNCTION SOMA_CLIENTES()
+RETURNS INT
+BEGIN
+	DECLARE @total int;
+	DECLARE @data_cadastro date;
+	
+	SET @data_cadastro = SELECT CAST(GETDATE() AS DATE);
+	
+	SELECT @total = COUNT(*)
+	FROM CLIENTES c
+	WHERE c.data_cadastro = @data_cadastro
+	
+	RETURN(@total)
+END
