@@ -1,0 +1,15 @@
+1. Confidencialidade:
+   - Garante que apenas pessoas autorizadas tenham acesso aos dados confidenciais.    
+
+2. Integridade:
+   - Garantir que os dados não tenham sido alterados ou corrompidos. 
+
+3. Disponibilidade:
+   - Garante que os serviços e dados estejam disponíveis quando necessário. 
+
+4. Autenticação e Autorização:
+   - autenticação para verificar a identidade de quem esta acessando os dados. 
+   - autorizacao para verificar o nivel de acesso e o que cada usuario pode acessar.
+
+5. Monitoramento e Detecção de Ameaças:
+   - monitoramento contínuo para detectar atividades suspeitas ou não autorizadas.
