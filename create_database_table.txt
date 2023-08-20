@@ -1,0 +1,10 @@
+CREATE DATABASE ESCOLA;
+
+CREATE TABLE ESCOLA.ALUNO(
+	Id int PRIMARY KEY,
+	Nome varchar(50) NOT NULL,
+	Matricula varchar(10) NOT NULL,
+	Email varchar(100) NOT NULL,
+	Endereco varchar(150) NOT NULL,
+	Telefone varchar(20) NULL
+)
