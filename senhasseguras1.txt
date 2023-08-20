@@ -1,0 +1,5 @@
+Politica de troca de senha 
+1. Senhas com grande quantidade de caracteres, de preferencia mais de oito caracteres.
+2. Senhas alfanumericas, com combinação de letras (A a Z) entre maiúsculas e minúsculas
+3. Senhas alfanumericas, com combinação de letras e números entre 0 a 9
+
